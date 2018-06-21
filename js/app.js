@@ -1,16 +1,16 @@
 (function(){
 
     // initialize map, centered on KY
-    var southWest = L.latLng(36.01, -89.61),
-        northEast = L.latLng(39.51, -81.64),
+    var southWest = L.latLng(35.51, -90.29),
+        northEast = L.latLng(40.24, -80.69),
         bounds = L.latLngBounds(southWest, northEast);
 
     var map = L.map('map', {
         zoomSnap: .05,
         center: [37.839333, -85.7],
         maxBounds: bounds,
-        zoom: 7.5,
-        minZoom: 7.2,
+        zoom: 6.5,
+        minZoom: 6.5,
         maxZoom: 18,
       });
 
@@ -110,12 +110,6 @@
       };
 
       L.control.layers(null, sourcesLabels, { collapsed:false }).addTo(map);
-
-      // add search box
-      var geocoder = L.Control.geocoder().addTo(map);
-
-      // add scale factor
-      L.control.scalefactor({position:"bottomright"}).addTo(map);
 
       // info modal code
       var modal = document.getElementById('myModal');
